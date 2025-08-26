@@ -1,0 +1,37 @@
+@keyframes blinkMy {
+
+    0%,
+    100% {
+        color: #2563eb;
+    }
+
+    /* biru */
+    50% {
+        color: #ec4899;
+    }
+
+    /* pink */
+}
+
+@keyframes blinkDompet {
+
+    0%,
+    100% {
+        color: #22c55e;
+    }
+
+    /* hijau */
+    50% {
+        color: #f97316;
+    }
+
+    /* orange */
+}
+
+.blink-my {
+    animation: blinkMy 2s infinite;
+}
+
+.blink-dompet {
+    animation: blinkDompet 2s infinite;
+}
