@@ -58,18 +58,47 @@ document.getElementById("formTransaksi").addEventListener("submit", function (e)
 function renderTransaksi() {
   const tbody = document.getElementById("daftarTransaksi");
   tbody.innerHTML = "";
-  transaksi.forEach((t) => {
+
+  transaksi.forEach((t, index) => {
     const row = `
-      <tr style="text-align:center">
+      <tr>
         <td class="border p-2">${t.tanggal}</td>
+        <td class="border p-2">${t.waktu}</td>
         <td class="border p-2">${t.deskripsi}</td>
         <td class="border p-2 ${t.tipe === "pemasukan" ? "text-green-600" : "text-red-600"}">
           ${t.tipe === "pemasukan" ? "+" : "-"} Rp ${t.jumlah.toLocaleString("id-ID")}
+        </td>
+        <td class="border p-2 text-center">
+          <button onclick="hapusTransaksi(${index})" 
+            class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded">
+            Hapus
+          </button>
         </td>
       </tr>
     `;
     tbody.innerHTML += row;
   });
+}
+
+// Fungsi hapus transaksi
+function hapusTransaksi(index) {
+  const t = transaksi[index];
+
+  // Update saldo sesuai jenis transaksi
+  if (t.tipe === "pemasukan") {
+    saldo -= t.jumlah;
+  } else {
+    saldo += t.jumlah;
+  }
+
+  // Hapus dari array & simpan ulang
+  transaksi.splice(index, 1);
+  localStorage.setItem("transaksi", JSON.stringify(transaksi));
+  localStorage.setItem("saldo", saldo);
+
+  // Refresh tampilan
+  updateSaldo();
+  renderTransaksi();
 }
 
 // Load awal
