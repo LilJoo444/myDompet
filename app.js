@@ -63,7 +63,6 @@ function renderTransaksi() {
     const row = `
       <tr>
         <td class="border p-2">${t.tanggal}</td>
-        <td class="border p-2">${t.waktu}</td>
         <td class="border p-2">${t.deskripsi}</td>
         <td class="border p-2 ${t.tipe === "pemasukan" ? "text-green-600" : "text-red-600"}">
           ${t.tipe === "pemasukan" ? "+" : "-"} Rp ${t.jumlah.toLocaleString("id-ID")}
