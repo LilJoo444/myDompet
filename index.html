@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myDompet</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body class="bg-gray-100 min-h-screen flex justify-center items-center p-4">
@@ -44,13 +44,14 @@
 
             <!-- Input Tanggal -->
             <div class="relative mb-2">
-                <input type="date" id="tanggal" class="w-full p-2 pl-10 border rounded-lg mb-2 appearance-none">
+                <input type="text" id="tanggal" placeholder="Pilih tanggal" class="w-full p-2 pl-10 border rounded-lg mb-2"
+                    required>
+            
                 <!-- Ikon Kalender Custom -->
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="absolute left-3 top-3 w-5 h-5 text-gray-400 pointer-events-none" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-3 w-5 h-5 text-gray-400 pointer-events-none"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 
-                     00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                         00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
             </div>
 
@@ -78,7 +79,17 @@
         </div>
     </div>
 
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#tanggal", {
+            dateFormat: "d/m/Y",  // format jadi dd/mm/yyyy
+            altInput: true,
+            altFormat: "d F Y",   // tampilan lebih ramah (misal: 26 Agustus 2025)
+            locale: "id"          // locale bahasa Indonesia
+        });
+    </script>
 </body>
 
 </html>
