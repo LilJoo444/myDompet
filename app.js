@@ -29,16 +29,15 @@ document.getElementById("formTransaksi").addEventListener("submit", function (e)
   e.preventDefault();
   const tipe = document.getElementById("tipe").value;
   const tanggal = document.getElementById("tanggal").value;
-  const waktu = document.getElementById("waktu").value;
   const deskripsi = document.getElementById("deskripsi").value;
   const jumlah = parseInt(document.getElementById("jumlah").value);
 
-  if (!tanggal || !waktu || !deskripsi || !jumlah) {
+  if (!tanggal || !deskripsi || !jumlah) {
     alert("Lengkapi semua data transaksi!");
     return;
   }
 
-  const data = { tipe, tanggal, waktu, deskripsi, jumlah };
+  const data = { tipe, tanggal, deskripsi, jumlah };
   transaksi.push(data);
   localStorage.setItem("transaksi", JSON.stringify(transaksi));
 
@@ -61,9 +60,8 @@ function renderTransaksi() {
   tbody.innerHTML = "";
   transaksi.forEach((t) => {
     const row = `
-      <tr>
+      <tr style="text-align:center">
         <td class="border p-2">${t.tanggal}</td>
-        <td class="border p-2">${t.waktu}</td>
         <td class="border p-2">${t.deskripsi}</td>
         <td class="border p-2 ${t.tipe === "pemasukan" ? "text-green-600" : "text-red-600"}">
           ${t.tipe === "pemasukan" ? "+" : "-"} Rp ${t.jumlah.toLocaleString("id-ID")}
@@ -95,11 +93,3 @@ function resetSaldo() {
   }
 };
 
-flatpickr("#tanggal", {
-  dateFormat: "Y-m-d"
-});
-flatpickr("#waktu", {
-  enableTime: true,
-  noCalendar: true,
-  dateFormat: "H:i"
-});

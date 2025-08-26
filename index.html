@@ -7,7 +7,6 @@
     <title>myDompet</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body class="bg-gray-100 min-h-screen flex justify-center items-center p-4">
@@ -42,23 +41,16 @@
                 <option value="pemasukan">Pemasukan</option>
                 <option value="pengeluaran">Pengeluaran</option>
             </select>
+
+            <!-- Input Tanggal -->
             <div class="relative mb-2">
-                <input type="text" id="tanggal" class="w-full p-2 pl-10 border rounded-lg mb-2" placeholder="Tanggal Transaksi">
-                <!-- ikon kalender -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-3 w-5 h-5 text-gray-400 pointer-events-none"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <input type="date" id="tanggal" class="w-full p-2 pl-10 border rounded-lg mb-2 appearance-none">
+                <!-- Ikon Kalender Custom -->
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="absolute left-3 top-3 w-5 h-5 text-gray-400 pointer-events-none" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 
                      00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-            </div>
-            
-            <div class="relative mb-2">
-                <input type="text" id="waktu" class="w-full p-2 pl-10 border rounded-lg mb-2" placeholder="Waktu Transaksi">
-                <!-- ikon jam -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-3 w-5 h-5 text-gray-400 pointer-events-none"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
                 </svg>
             </div>
 
@@ -77,7 +69,6 @@
                 <thead>
                     <tr class="bg-gray-200">
                         <th class="border p-2">Tanggal</th>
-                        <th class="border p-2">Waktu</th>
                         <th class="border p-2">Deskripsi</th>
                         <th class="border p-2">Jumlah</th>
                     </tr>
@@ -88,7 +79,6 @@
     </div>
 
     <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 
 </html>
