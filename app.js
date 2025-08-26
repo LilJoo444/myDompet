@@ -94,3 +94,12 @@ function resetSaldo() {
     window.location.reload(); // reload agar kembali ke halaman saldo awal
   }
 };
+
+flatpickr("#tanggal", {
+  dateFormat: "Y-m-d"
+});
+flatpickr("#waktu", {
+  enableTime: true,
+  noCalendar: true,
+  dateFormat: "H:i"
+});

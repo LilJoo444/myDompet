@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myDompet</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-gray-100 min-h-screen flex justify-center items-center p-4">
@@ -42,8 +42,8 @@
                 <option value="pemasukan">Pemasukan</option>
                 <option value="pengeluaran">Pengeluaran</option>
             </select>
-            <input type="text" id="tanggal" placeholder="Pilih tanggal" class="w-full p-2 border rounded-lg mb-2 appearance-none">
-            <input type="text" id="waktu" placeholder="Pilih jam" class="w-full p-2 border rounded-lg mb-2 appearance-none">
+            <input type="text" id="tanggal" placeholder="Pilih tanggal" class="w-full p-2 border rounded-lg mb-2">
+            <input type="text" id="waktu" placeholder="Pilih jam" class="w-full p-2 border rounded-lg mb-2">
             <input type="text" id="deskripsi" placeholder="Deskripsi" class="w-full p-2 border rounded-lg mb-2"
                 required>
             <input type="number" id="jumlah" placeholder="Jumlah (Rp)" class="w-full p-2 border rounded-lg mb-2"
@@ -71,16 +71,6 @@
 
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-        flatpickr("#tanggal", {
-            dateFormat: "Y-m-d"
-        });
-        flatpickr("#waktu", {
-            enableTime: true,
-            noCalendar: true,
-            dateFormat: "H:i"
-        });
-    </script>
 </body>
 
 </html>
